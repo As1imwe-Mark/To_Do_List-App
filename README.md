@@ -54,16 +54,15 @@ In order to run this project you need: A web browser.
 
 Clone this repository to your desired folder:
 cd Module_1 
--git clone 
+-git clone https://github.com/As1imwe-Mark/To_Do_List-App
 
 ### Install
 
-_No installation is required, double click the index.html file to open it.
+Install this project with: - npm install to install local dependencies - npm run build to build it
 
 ### Usage
 
-To run the project, execute the following command:
--Double click the index.html file.
+To run the project : npm start
 
 ### Project_presentation
 [Project Presentation] You can see the live presentation of the key concepts taken into account while creating this project here: 
