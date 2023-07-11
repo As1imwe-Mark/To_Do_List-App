@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use strict";
 (self["webpackChunkweb_pack_boilerplate"] = self["webpackChunkweb_pack_boilerplate"] || []).push([["main"],{
 
@@ -435,6 +436,7 @@ module.exports = insertStyleElement;
 
 /* istanbul ignore next  */
 function setAttributesWithoutAttributes(styleElement) {
+  // eslint-disable-next-line no-constant-condition
   var nonce =  true ? __webpack_require__.nc : 0;
   if (nonce) {
     styleElement.setAttribute("nonce", nonce);
