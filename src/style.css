@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.to_do-container {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 1px 1px 10px 1px black;
+  margin: 100px auto;
+}
+
+.header,
+.add_item {
+  border-bottom: 1px solid lightgray;
+  padding: 15px;
+}
+
+.add_item input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  font-size: 17px;
+  font-style: italic;
+}
+
+.refresh {
+  float: right;
+  margin-right: 3px;
+  font-size: 16px;
+}
+
+.list-items li input {
+  margin-right: 10px;
+}
+
+.add_item input:focus {
+  outline: none;
+}
+
+.add_item input::placeholder {
+  font-style: italic;
+  font-size: 18px;
+  padding: 2px;
+}
+
+.list-items li {
+  border-bottom: 1px solid lightgray;
+  padding: 15px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.remove-all {
+  text-align: center;
+}
+
+.remove-all button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
