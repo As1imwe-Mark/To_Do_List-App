@@ -12,9 +12,15 @@
         <h4>Today's To Do List  <span class="refresh"><i class="refresh fa">&#xf021;</i></span></h4>
     </div>
     <div class="add_item">
-        <input type="text" placeholder="Add to your list"><span class="refresh"><i class="refresh fa">&#xf112;</i>
+        <input class="item-input"  type="text" placeholder="Add to your list"><span class="enter"><i id="enter" class="enter fa">&#xf112;</i></span>
     </div>
-    <div class="list-items">
+    <div class="list-items"> 
+        <input type="checkbox" id="check">
+        <span>Hello guysssss</span>
+        <span>
+          <i class="menu fa">&#xf142;</i>
+          <i data-id="${item.index}" class="delete hide fa">&#xf014;</i>
+        </span>
     </div>
     <div class="remove-all">
         <button type="button">Clear all completed</button>

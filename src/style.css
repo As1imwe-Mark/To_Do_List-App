@@ -29,11 +29,21 @@
   font-style: italic;
 }
 
-.refresh {
+.refresh, .delete, .enter, .menu {
   float: right;
   margin-right: 3px;
   font-size: 16px;
+  cursor: pointer;
 }
+
+.hide {
+  display: none;
+}
+
+.color {
+  background-color:rgb(252, 252, 113);
+}
+
 
 .list-items li input {
   margin-right: 10px;
