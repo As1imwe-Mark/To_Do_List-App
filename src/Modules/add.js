@@ -11,10 +11,9 @@ export function add(list) {
   const itemValue = item.value.trim();
 
   if (itemValue === '') {
-    // alert('Please enter a to-do!');
     return;
   } else {
-    const item_ = new Items(itemValue, false, list.length); // Use list.length as the index
+    const item_ = new Items(itemValue, false, list.length);
     list.push(item_);
   }
 }
