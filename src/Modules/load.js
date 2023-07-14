@@ -10,20 +10,23 @@ export const loadList = () => {
   const itemList = document.querySelector('.list-items');
   const storedList = JSON.parse(localStorage.getItem('Todo'));
 
+  // If there is a stored list, load it into the list variable
   if (storedList && storedList.length > 0) {
     list = storedList;
     index = list.length;
 
+    // Iterate through the stored list and create a list item for each item
     list.forEach((item) => {
       const listItem = createListItem(item);
       itemList.appendChild(listItem);
     });
   }
 
-  iconToggle();
+  // Update the iconToggle, del, complete, and clearAll functions with the updated list
+  iconToggle(list);
   del(list);
   complete(list);
-  clearAll(list)
+  clearAll(list);
 };
 
 export function add(description) {
@@ -33,8 +36,9 @@ export function add(description) {
     index: index++
   };
 
+  // Add the new item to the list and update the user interface
   list.push(item_);
-  saveList();
+  loadList();
 }
 
 export function saveList() {
@@ -54,5 +58,4 @@ function createListItem(item) {
 
   return listItem;
 }
-
 

@@ -1,11 +1,15 @@
-export function clearAll(list) {
-  const clearBtn = document.querySelector('.clear');
-  clearBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const storedList = JSON.parse(localStorage.getItem('list')) || [];
-    list = storedList.filter(item => !item.completed);
-    console.log(list)
-    localStorage.setItem('list', JSON.stringify(list));
+import { save } from "./save";
+
+export const clearAll = (list) => {
+  const clear=document.querySelector('.clear')
+  clear.addEventListener('click',()=>{
+    const completedTasks = list.filter((task) => task.completed);
+    completedTasks.forEach((completedTask) => {
+      const index = list.indexOf(completedTask);
+      list.splice(index, 1);
+    });
+    save(list);
     location.reload();
-  });
-}
+  })
+ 
+};

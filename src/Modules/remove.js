@@ -1,4 +1,5 @@
 import { save } from "./save";
+
 export function del(list) {
   const itemList = document.querySelector('.list-items');
   itemList.addEventListener('click', function (e) {
@@ -16,4 +17,5 @@ export function del(list) {
     }
   });
 }
+
 
