@@ -11,6 +11,9 @@ export function del(list) {
         const index = list.findIndex(item => item.index === id);
         if (index !== -1) {
           list.splice(index, 1);
+          for (let i = index; i < list.length; i++) {
+            list[i].index = i;
+          }
           save(list);
         }
       }

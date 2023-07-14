@@ -86,3 +86,15 @@
   color: rgb(107, 250, 107);
   background-color: rgb(252, 252, 113);
 }
+
+.check {
+  cursor: pointer;
+}
+
+.txt {
+  user-select: none;
+}
+
+.clear:hover {
+  text-decoration: underline;
+}

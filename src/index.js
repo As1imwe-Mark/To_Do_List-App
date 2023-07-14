@@ -43,3 +43,7 @@ function populate() {
 populate();
 refresh();
 clearAll(list);
+
+window.onload = () => {
+  edit(list);
+};
