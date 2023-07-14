@@ -1,88 +1,104 @@
-// import _ from 'lodash';
+// // import _ from 'lodash';
+// import './style.css';
+// import { add } from "./Modules/add.js";
+// import { clear } from './Modules/clear.js';
+// import { save } from "./Modules/save.js";
+// import { loadList } from './Modules/load.js';
+// import { iconToggle } from './Modules/iconToggle.js';
+// import { del } from './Modules/remove';
+// import { complete } from './Modules/status';
+// import { clearAll } from './Modules/clearAll';
+// import { refresh } from './Modules/refresh';
+
+// let list =[];
+// function populate(){
+//   const itemList=document.querySelector('.list-items');
+//   const item = document.querySelector('.item-input');
+//   item.addEventListener('keypress', (e) => {
+//     if (e.key === 'Enter') {
+//       add(list);
+//       list.forEach((item)=>{
+//         const newItem = document.createElement('li');
+//           newItem.innerHTML = `
+//           <input class="check" type="checkbox" data-id="${item.index}"><span class='finished'>${item.description}</span><span><i class="menu fa">&#xf142;<i data-id="${item.index}" class="delete hide fa">&#xf014;</span>
+//           `;
+//           itemList.appendChild(newItem);
+        
+//           save(list);
+//           clear();
+//       })
+//     iconToggle();
+//   }
+// });
+// loadList(list)
+// complete(list);
+// }
+
+// populate();
+// refresh();
+// clearAll();
+
+// del(list);
+
+// console.log(document.querySelector('.check'))
+
+// // document.addEventListener('DOMContentLoaded')
+
+
+  
+  
 import './style.css';
 import { add } from "./Modules/add.js";
 import { clear } from './Modules/clear.js';
 import { save } from "./Modules/save.js";
 import { loadList } from './Modules/load.js';
 import { iconToggle } from './Modules/iconToggle.js';
-import { del } from './Modules/remove';
-// import { check } from './Modules/status';
+import { del } from './Modules/remove.js';
+import { complete } from './Modules/status.js';
+import { clearAll } from './Modules/clearAll.js';
+import { refresh } from './Modules/refresh.js';
 
-let list =[];
+let list = [];
 
-
-  const itemList=document.querySelector('.list-items');
+function populate() {
+  const itemList = document.querySelector('.list-items');
   const item = document.querySelector('.item-input');
+
   item.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       add(list);
-      let listHtml = '';
-        list.forEach((item) => {
-          listHtml += `<li><input type="checkbox" id="check"><span>${item.description}</span><span><i class="menu fa">&#xf142;</i><i data-id="${item.index}" class="delete hide fa">&#xf014;</i></span></li>`;
-        });
-        itemList.innerHTML = listHtml;
-       
-      clear();
-     
-      save(list);
-      
-    }
-  })
-  iconToggle();
-  
- 
-  del(list);
-  check()
-  loadList(list)
-
-
-
-// populate();
-
-
-
-
-
-
-function check() {
-  const check_ = document.querySelectorAll('#check');
-  const itemList = document.querySelector('.list-items');
-
-  check_.forEach((checkBox, index) => {
-    checkBox.addEventListener('change', () => {
-      if (list[index].completed === false) {
-        list[index] = { ...list[index], completed: true };
-        renderList();
-        save();
-      }
-    });
-  });
-
-  function renderList() {
-    itemList.innerHTML = '';
-
-    list.forEach((item) => {
-      const listItem = document.createElement('li');
-      listItem.innerHTML = `
-        <input type="checkbox" id="check" ${item.completed ? 'checked' : ''}>
-        <span>${item.description}</span>
+      const newItem = list[list.length - 1];
+      const newItemElement = document.createElement('li');
+      newItemElement.innerHTML = `
+        <input class="check" type="checkbox" data-id="${newItem.index}">
+        <span class='txt'>${newItem.description}</span>
         <span>
           <i class="menu fa">&#xf142;</i>
-          <i data-id="${item.index}" class="delete hide fa">&#xf014;</i>
+          <i data-id="${newItem.index}" class="delete hide fa">&#xf014;</i>
         </span>
       `;
-      itemList.appendChild(listItem);
-    });
-  }
+      itemList.appendChild(newItemElement);
+      save(list);
+      clear();
+      iconToggle();
+    }
+  });
 
-  renderList();
+  loadList(list);
+  complete(list);
 }
 
-// check(list);
+populate();
+refresh();
+clearAll();
+
+del(list);
+
+console.log(document.querySelector('.check'));
 
 
 
-//  document.addEventListener('DOMContentLoaded',loadList(list))
+
 
   
  

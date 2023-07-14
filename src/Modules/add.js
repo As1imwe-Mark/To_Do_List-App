@@ -10,11 +10,10 @@ export function add(list) {
   const item = document.querySelector('.item-input');
   const itemValue=item.value.trim();
   if (itemValue === '') {
-    alert('Please enter a to-do!');
-    return false;
+    // alert('Please enter a to-do!');
+    return;
   } else {
-    
       const item_ = new Items(item.value, false, index++);
-      list.push(item_);
+       list.push(item_);   
 }
 }

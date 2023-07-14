@@ -78,3 +78,8 @@
   border: none;
   cursor: pointer;
 }
+
+.finished {
+  text-decoration: line-through;
+  color: rgb(107, 250, 107);
+}

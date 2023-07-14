@@ -8,12 +8,13 @@ export function iconToggle() {
       const targetMenuItem = e.target;
       const parentListItem = targetMenuItem.parentElement.parentElement;
 
-      parentListItem.classList.add('color');
+      parentListItem.classList.toggle('color');
       targetMenuItem.classList.add('hide');
       deleteIcon.classList.remove('hide');
     });
   });
 }
+
 
   
  
