@@ -37,13 +37,15 @@ function populate() {
       edit(list)
     }
   });
-  loadList(list)
+ 
 }
 
-populate();
+
 refresh();
 clearAll(list);
 
 window.onload = () => {
+  populate();
+  loadList(list)
   edit(list);
 };
