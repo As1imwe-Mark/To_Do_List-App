@@ -1,4 +1,3 @@
-let index=0;
 export function add(list) {
   class Items {
     constructor(description, completed, index) {
@@ -7,13 +6,15 @@ export function add(list) {
       this.index = index;
     }
   }
+
   const item = document.querySelector('.item-input');
-  const itemValue=item.value.trim();
+  const itemValue = item.value.trim();
+
   if (itemValue === '') {
     // alert('Please enter a to-do!');
     return;
   } else {
-      const item_ = new Items(item.value, false, index++);
-       list.push(item_);   
-}
+    const item_ = new Items(itemValue, false, list.length); // Use list.length as the index
+    list.push(item_);
+  }
 }

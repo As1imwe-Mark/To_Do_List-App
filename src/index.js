@@ -8,8 +8,11 @@ import { del } from './Modules/remove.js';
 import { complete } from './Modules/status.js';
 import { clearAll } from './Modules/clearAll.js';
 import { refresh } from './Modules/refresh.js';
+import { edit } from './Modules/edit';
+
 
 let list = [];
+
 
 function populate() {
   const itemList = document.querySelector('.list-items');
@@ -31,29 +34,17 @@ function populate() {
       itemList.appendChild(newItemElement);
       save(list);
       clear();
-      // iconToggle();
+      complete(list);
+      iconToggle()
+      del(list);
+      edit(list)
     }
   });
-
-  loadList(list);
-  complete(list);
-  del(list);
+  loadList(list)
 }
 
 populate();
+
+
 refresh();
 clearAll();
-
-
-
-console.log(document.querySelector('.check'));
-
-
-
-
-
-  
- 
-
-
-
