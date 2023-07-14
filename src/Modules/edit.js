@@ -1,13 +1,23 @@
-// task_edit_botton.addEventListener('click', ()=>{
-            
-//   if (task_edit_botton.innerText.toLowerCase() =="edit") {
-//           task_input.removeAttribute("readonly");
-//           task_input.focus();
-//           task_edit_botton.innerText = "Save";
-//           task_input.style.textDecoration="none"
-//   }else{
-//       task_input.setAttribute("readonly", "readonly");
-//       task_edit_botton.innerText ="Edit";
-      
-//   }
-// });
+function enableEdit(spanElement, dataArray, index) {
+  spanElement.addEventListener('dblclick', function () {
+    spanElement.contentEditable = true;
+    spanElement.focus();
+  });
+
+  spanElement.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      spanElement.blur();
+    }
+  });
+
+  spanElement.addEventListener('blur', function () {
+    const updatedData = spanElement.textContent.trim();
+    dataArray[index].description = updatedData;
+    save(dataArray);
+    spanElement.contentEditable = false;
+  });
+}
+const spanElement = document.querySelector('.txt');
+const index = /* index of the corresponding item in the list array */;
+enableEdit(spanElement, list, index);

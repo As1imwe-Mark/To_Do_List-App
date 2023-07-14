@@ -1,4 +1,6 @@
-// import { iconToggle } from "./iconToggle";
+import { iconToggle } from "./iconToggle";
+import { complete } from "./status";
+import { del } from "./remove";
 let index=0;
 let list=[];
 export const loadList=() =>{
@@ -13,11 +15,13 @@ export const loadList=() =>{
       index=list.length;
     })
     itemList.innerHTML = listHtml;
-    // iconToggle();
+    
   }else {
     list;
     index;
   }
- 
+ iconToggle();
+ complete(list);
+ del(list);
 }
 

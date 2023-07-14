@@ -80,19 +80,20 @@ function populate() {
       itemList.appendChild(newItemElement);
       save(list);
       clear();
-      iconToggle();
+      // iconToggle();
     }
   });
 
   loadList(list);
   complete(list);
+  del(list);
 }
 
 populate();
 refresh();
 clearAll();
 
-del(list);
+
 
 console.log(document.querySelector('.check'));
 
