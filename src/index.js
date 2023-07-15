@@ -11,6 +11,8 @@ import { refresh } from './Modules/refresh.js';
 import { edit } from './Modules/edit';
 
 let list = [];
+
+
 function populate() {
   const itemList = document.querySelector('.list-items');
   const item = document.querySelector('.item-input');
@@ -31,21 +33,23 @@ function populate() {
       itemList.appendChild(newItemElement);
       save(list);
       clear();
+     
       complete(list);
       iconToggle()
       del(list);
       edit(list)
     }
   });
- 
+  
 }
 
-
+populate();
 refresh();
 clearAll(list);
 
+
 window.onload = () => {
-  populate();
-  loadList(list)
+  
+  loadList()
   edit(list);
 };
