@@ -34,7 +34,7 @@ function populate() {
       save(list);
       clear();
      
-      complete(list);
+      
       iconToggle()
       del(list);
       edit(list)
@@ -46,7 +46,7 @@ function populate() {
 populate();
 refresh();
 clearAll(list);
-
+complete(list);
 
 window.onload = () => {
   
