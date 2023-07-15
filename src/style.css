@@ -29,10 +29,22 @@
   font-style: italic;
 }
 
-.refresh {
+.refresh,
+.delete,
+.enter,
+.menu {
   float: right;
   margin-right: 3px;
   font-size: 16px;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.color {
+  background-color: rgb(252, 252, 113);
 }
 
 .list-items li input {
@@ -67,4 +79,22 @@
   font-size: 18px;
   border: none;
   cursor: pointer;
+}
+
+.finished {
+  text-decoration: line-through;
+  color: rgb(107, 250, 107);
+  background-color: rgb(252, 252, 113);
+}
+
+.check {
+  cursor: pointer;
+}
+
+.txt {
+  user-select: none;
+}
+
+.clear:hover {
+  text-decoration: underline;
 }

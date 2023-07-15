@@ -1,37 +1,55 @@
-// import _ from 'lodash';
 import './style.css';
+import { add } from "./Modules/add.js";
+import { clear } from './Modules/clear.js';
+import { save } from "./Modules/save.js";
+import { loadList } from './Modules/load.js';
+import { iconToggle } from './Modules/iconToggle.js';
+import { del } from './Modules/remove.js';
+import { complete } from './Modules/status.js';
+import { clearAll } from './Modules/clearAll.js';
+import { refresh } from './Modules/refresh.js';
+import { edit } from './Modules/edit';
 
-const itemList=document.querySelector('.list-items');
+let list = [];
 
-let index=1;
 
-const list =[
-  {
-    description:'Wash the dishes',
-    completed: false,
-    index:index++
-  },
-  {
-    description:'Complete To Do list project',
-    completed: false,
-    index: index++
-  },
-  {
-    description:'Watch some React tutorials',
-    completed: false,
-    index: index++
-  }
-]
+function populate() {
+  const itemList = document.querySelector('.list-items');
+  const item = document.querySelector('.item-input');
 
-console.log(list);
-
-const populate=()=>{
-  let listHtml='';
-  list.forEach((item)=>{
-    listHtml+=`<li><input type="checkbox" id=""><span>${item.description}</span><span><i class="refresh fa">&#xf142;</i></span>`
-    itemList.innerHTML=listHtml;
-  })
+  item.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      add(list);
+      const newItem = list[list.length - 1];
+      const newItemElement = document.createElement('li');
+      newItemElement.innerHTML = `
+        <input class="check" type="checkbox" data-id="${newItem.index}">
+        <span class='txt'>${newItem.description}</span>
+        <span>
+          <i class="menu fa">&#xf142;</i>
+          <i data-id="${newItem.index}" class="delete hide fa">&#xf014;</i>
+        </span>
+      `;
+      itemList.appendChild(newItemElement);
+      save(list);
+      clear();
+     
+      complete(list);
+      iconToggle()
+      del(list);
+      edit(list)
+    }
+  });
+  
 }
 
-document.addEventListener('DOMContentLoaded',populate)
+populate();
+refresh();
+clearAll(list);
 
+
+window.onload = () => {
+  
+  loadList()
+  edit(list);
+};
