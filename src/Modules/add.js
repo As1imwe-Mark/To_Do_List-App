@@ -1,4 +1,3 @@
-import { del } from "./remove";
 import { save } from "./save";
 class Items {
   constructor(description, completed, index) {
@@ -18,7 +17,6 @@ export function add(list) {
     list.push(item_);
     item_.index = list.length;
     save(list);
-    del(list)
   }
 }
 
