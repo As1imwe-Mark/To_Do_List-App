@@ -1,8 +1,8 @@
 // Summarized Code (Reduced Lines):
 // Import Jest
-const { describe, test, expect,jest ,beforeEach } = require('@jest/globals');
+import { describe, test, expect,jest ,beforeEach } from '@jest/globals';
 
-import { add } from '../src/Modules/add.js';
+import { add }  from'../src/Modules/add.js';
 
 
 describe('testing the add and delete functions',()=>{

@@ -1,6 +1,6 @@
 import { del } from '../src/Modules/remove.js';
 
-const { describe, test, expect, jest} = require('@jest/globals');
+import { describe, test, expect, jest} from '@jest/globals';
 describe('delete',()=>{
   const mockRemoveChild = jest.fn();
   const mockContains = jest.fn((element) => element.tagName === 'LI');
