@@ -11,9 +11,7 @@ import { refresh } from './Modules/refresh.js';
 import { edit } from './Modules/edit';
 
 let list = [];
- export const List=()=>{
-  return list;
- }
+ 
 
 
 export function populate() {
