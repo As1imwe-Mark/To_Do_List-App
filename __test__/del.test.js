@@ -20,9 +20,6 @@ describe('delete',()=>{
     { description: 'Item 2', completed: false, index: 2 },
     { description: 'Item 3', completed: false, index: 3 },
   ];
-  
-  // jest.mock('../src/Modules/save.js');
-  // const { save } = require('../src/Modules/save.js');
   test('del function should remove the item from the list array and DOM', () => {
     const mockEvent = {
       preventDefault: jest.fn(),

@@ -1,5 +1,3 @@
-// Summarized Code (Reduced Lines):
-// Import Jest
 import { describe, test, expect,jest ,beforeEach } from '@jest/globals';
 
 import { add }  from'../src/Modules/add.js';
