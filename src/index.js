@@ -11,9 +11,10 @@ import { refresh } from './Modules/refresh.js';
 import { edit } from './Modules/edit';
 
 let list = [];
+ 
 
 
-function populate() {
+export function populate() {
   const itemList = document.querySelector('.list-items');
   const item = document.querySelector('.item-input');
 
