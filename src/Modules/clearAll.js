@@ -7,7 +7,7 @@ export const clearAll = (list) => {
     const completedTasks = list.filter((task) => task.completed === true);
     completedTasks.forEach((completedTask) => {
       const index = list.indexOf(completedTask);
-      list.splice(index, 1);
+      list.splice(index, 1);  
     });
     save(list);
     location.reload();
