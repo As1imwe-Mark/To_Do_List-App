@@ -32,6 +32,38 @@ export function complete(list) {
   });
 }
 
+export const handleCheckboxchange = (event, list) => {
+  const checkbox = event.target;
+  if (checkbox.type === 'checkbox') {
+    const listItem = checkbox.closest('li');
+    const taskId = listItem.getAttribute('data-id');
+    list[taskId - 1].completed = checkbox.checked;
+    save(list);
+    if (checkbox.checked) {
+      listItem.querySelector('.text').classList.add('finished');
+    } else {
+      listItem.querySelector('.text').classList.remove('finished');
+    }
+    save(list);
+  }
+};
 
+
+const loadActivityArrayFromLocalStorage = () => {
+  const activityArrayString = localStorage.getItem('Todo');
+  if (activityArrayString) {
+    return JSON.parse(activityArrayString);
+  }
+  return [];
+};
+
+const activityArray1 = loadActivityArrayFromLocalStorage();
+
+activityArray1.forEach((task, index) => {
+  const listItem = document.querySelector(`[data-id="${index + 1}"]`);
+  if (task.completed) {
+    listItem.querySelector('.text').classList.add('finished');
+  }
+});
 
 
