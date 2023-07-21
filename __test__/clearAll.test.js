@@ -33,7 +33,7 @@ describe('Testing function to clear all completed tasks',()=>{
     document.body.appendChild(clearBtn)
     document.body.appendChild(txtElement2);
   });
-    test('Testing function to clear all completed tasks',()=>{
+    test('Testing function to clear all completed tasks from the DOM',()=>{
       const checkbox = document.querySelectorAll('.check');
       checkbox.forEach((box)=>{
         box.click();

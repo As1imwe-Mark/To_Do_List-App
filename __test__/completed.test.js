@@ -19,7 +19,7 @@ describe('check if task is completed', () => {
     txtElement.appendChild(checkBox)
     document.body.appendChild(txtElement);
   });
-  test('adding the completed', () => {
+  test('adding the strikethrough function', () => {
     const checkbox = document.querySelector('.check');
     checkbox.click();
   if(checkbox.type === 'checkbox') {
